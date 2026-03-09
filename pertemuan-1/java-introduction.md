@@ -47,7 +47,7 @@ public class Main {
 }
 ```
 # 2. Operators
-## 1.1 Arithmetic Operators
+## 2.1 Arithmetic Operators
 
 | Operator | Nama | Deskripsi | Contoh |
 |----------|------|-----------|--------|
@@ -66,7 +66,7 @@ x++ = nilai digunakan dulu, baru ditambah 1
 ```
 
 
-## 1.2 Assignment Operators
+## 2.2 Assignment Operators
 
 | Operator | Contoh |
 |----------|--------|
@@ -79,7 +79,7 @@ x++ = nilai digunakan dulu, baru ditambah 1
 | ^= | x ^= 1 (x = x^1) |
 ---
 
-## 1.3 Comparison Operators
+## 2.3 Comparison Operators
 
 | Operator | Nama | Contoh |
 |----------|------|--------|
@@ -91,7 +91,7 @@ x++ = nilai digunakan dulu, baru ditambah 1
 | <= | Less than or equal to | x <= 1 |
 ---
 
-## 1.4 Logical Operator
+## 2.4 Logical Operator
 
 | Operator | Nama | Deskripsi | Contoh |
 |----------|------|-----------|--------|
