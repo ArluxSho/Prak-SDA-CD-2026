@@ -20,7 +20,7 @@ Perbedaan utama antara **Primitive Data Types** dan **Non-Primitive Data Types**
 | Penyimpanan | Menyimpan nilai langsung | Menyimpan referensi/alamat objek |
 | Method | Tidak memiliki method | Memiliki method |
 | Nilai awal | Memiliki default value | Defaultnya `null` |
-| Diawali | Huruf kecil | Huruf Besar |
+| Diawali | Huruf kecil | Huruf besar |
 ---
 ### Contoh Program 
 
@@ -29,7 +29,7 @@ Perbedaan utama antara **Primitive Data Types** dan **Non-Primitive Data Types**
 public class Main { 
     public static void main(String[] args) {
         int umur = 20;
-        double tinggi = 165.5;
+        double tinggi = 183.12;
         char grade = 'A';
         boolean lulus = true;
     }
@@ -48,8 +48,49 @@ public class Main {
 ```
 # 2. Operators
 ## 1.1 Arithmetic Operators
+
+| Operator | Nama | Deskripsi | Contoh |
+|----------|------|-----------|--------|
+| + | Addition | Digunakan untuk menjumlahkan dua nilai | 5 + 3 = 8 |
+| - | Subtraction | Digunakan untuk mengurangi suatu nilai dengan nilai lain | 10 - 4 = 6 |
+| * | Multiplication | Digunakan untuk mengalikan dua nilai | 4 * 3 = 12 |
+| / | Division | Digunakan untuk membagi suatu nilai dengan nilai lain | 10 / 2 = 5 |
+| % | Modulus | Menghasilkan sisa hasil pembagian | 10 % 3 = 1 |
+| ++ | Increment | Menambah nilai variabel sebesar 1 | x++ atau ++x |
+| -- | Decrement | Mengurangi nilai variabel sebesar 1 | x-- atau --x |
+---
+*jangan lupa perbedaan x++ dan ++x*
+```
+x++ = nilai digunakan dulu, baru ditambah 1
+++x = nilai ditambah dulu, baru digunakan
+```
+
+
 ## 1.2 Assignment Operators
+
+| Operator | Contoh |
+|----------|--------|
+| = | x = 10 |
+| += | x += 5 (x = x + 5) |
+| -= | x -= 3 (x = x - 3) |
+| *= | x *= 2 (x = x * 2) |
+| /= | x /= 4 (x = x / 4) |
+| %= | x %= 3 (x = x % 3) |
+| ^= | x ^= 1 (x = x^1) |
+---
+
 ## 1.3 Comparison Operators
+
+| Operator | Nama | Contoh |
+|----------|------|--------|
+| == | Equal to | x == 1 |
+| != | Not equal to | x != 1 |
+| > | Greater than | x > 1 |
+| < | Less than | x < 1 |
+| >= | Greater than or equal to | x >= 1 |
+| <= | Less than or equal to | x <= 1 |
+---
+
 ## 1.4 Logical Operator
 
 | Operator | Nama | Deskripsi | Contoh |
