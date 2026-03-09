@@ -1,6 +1,6 @@
 # Praktikum Struktur Data dan Algoritma
 
-Repository ini berisi materi, tugas, dan panduan praktikum untuk mata kuliah **Struktur Data dan Algoritma**.
+Repository ini berisi materi, tugas, dan panduan praktikum untuk mata kuliah **Struktur Data dan Algoritma** kelas C dan kelas D informatika 2025.
 
 ---
 
