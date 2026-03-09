@@ -100,3 +100,207 @@ x++ = nilai digunakan dulu, baru ditambah 1
 | ! | Logika NOT | Membalikkan nilai boolean (true menjadi false, dan sebaliknya) | !(x < 9) |
 ---
 
+# 3. JAVA CONTROL FLOW
+
+Control Flow adalah mekanisme yang menentukan **alur eksekusi program** berdasarkan kondisi atau perulangan.
+
+Control flow memungkinkan program untuk:
+
+- Mengambil keputusan
+- Mengulang proses
+- Mengontrol jalannya program
+
+---
+
+## 3.1 If-Else Statement
+
+`if-else` digunakan untuk menjalankan kode berdasarkan **kondisi tertentu**.
+
+Jika kondisi bernilai **true**, maka kode di dalam blok `if` akan dijalankan.  
+Jika kondisi bernilai **false**, maka kode di dalam blok `else` akan dijalankan.
+
+---
+
+Contoh Program: 
+
+```java
+public class Main {
+    public static void main(String[] args) {
+
+        int time = 20;
+
+        if (time < 18) {
+            System.out.println("Good day.");
+        } else {
+            System.out.println("Good evening.");
+        }
+
+    }
+}
+```
+
+## 3.2 Switch Statement
+
+`switch` digunakan untuk memilih salah satu dari banyak kemungkinan nilai. Struktur ini sering digunakan ketika kita memiliki banyak pilihan kondisi berdasarkan satu variabel.
+
+Contoh program:
+```java
+public class Main {
+    public static void main(String[] args) {
+
+        int day = 4;
+
+        switch (day) {
+
+            case 1:
+                System.out.println("Monday");
+                break;
+
+            case 2:
+                System.out.println("Tuesday");
+                break;
+
+            case 3:
+                System.out.println("Wednesday");
+                break;
+
+            case 4:
+                System.out.println("Thursday");
+                break;
+
+            case 5:
+                System.out.println("Friday");
+                break;
+
+            case 6:
+                System.out.println("Saturday");
+                break;
+
+            case 7:
+                System.out.println("Sunday");
+                break;
+        }
+
+    }
+}
+```
+
+--
+
+## 3.3 For Loop 
+
+`for` loop digunakan untuk melakukan perulangan dengan jumlah yang diketahui. Struktur dasanya:
+
+```java
+for (inisialisasi; kondisi; increment/decrement)
+```
+
+Contoh program: 
+
+```java
+public class Main {
+    public static void main(String[] args) {
+
+        for (int i = 0; i < 5; i++) {
+            System.out.println(i);
+        }
+
+    }
+}
+```
+
+--
+
+## 3.4 While Loop
+
+`while` loop digunakan untuk melakukan perulangan selama kondisi bernilai true. Contoh program:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+
+        int i = 0;
+
+        while (i < 5) {
+            System.out.println(i);
+            i++;
+        }
+
+    }
+}
+```
+
+-- 
+
+## 3.5 Do-While Loop
+
+`do-while` mirip dengan `while`, tetapi kondisi aka dijalankan minimal satu kali sebelum kondisi diperiksa. Contoh program:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+
+        int i = 0;
+
+        do {
+            System.out.println(i);
+            i++;
+        } while (i < 5);
+
+    }
+}
+```
+
+--
+
+## 3.6 Break and Continue 
+
+Dalam perulangan, kita dapat menggunakan break yang digunakan untuk menghentikan loop secara langsung, dan continue digunakan untuk melewati iterasi saat ini dan melanjutkan ke iterasi berikutnya. Contoh program:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+
+        for (int i = 0; i < 10; i++) {
+
+            if (i == 5) {
+                break; // Keluar dari loop ketika i sama dengan 5
+            }
+
+            if (i % 2 == 0) {
+                continue; // Lewatkan iterasi ketika i adalah angka genap
+            }
+
+            System.out.println(i); // Hanya mencetak angka ganjil dari 0 hingga 9
+        }
+
+    }
+}
+```
+
+--
+
+# 4. Java-Arrays
+
+Array digunakan untuk menyimpan banyak nilai dalam satu variabel. Semua elemen dalam array memiliki tipe data yang sama. Contoh program:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+
+        // Deklarasi dan inisialisasi array
+        int[] myNumbers = {10, 20, 30, 40, 50};
+
+        // Mengakses elemen array
+        System.out.println(myNumbers[0]); // Output: 10
+
+        // Mengubah elemen array
+        myNumbers[1] = 25;
+        System.out.println(myNumbers[1]); // Output: 25
+
+        // Panjang array
+        System.out.println(myNumbers.length); // Output: 5
+
+    }
+}
+```
