@@ -1,5 +1,5 @@
 # Struktur Data dan Algoritma
-Struktur dasar algoritma merupakan konsep dasar ilmu komputer yang mengacu pada pengorganisasian dan manipulasi data dengan cara yang efisien dan efektif.
+Struktur Data adalah cara mengumpulkan dan mengatur data sedemikian rupa sehingga kita dapat melakukan operasi pada sebuah data dengan cara yang efektif.
 
 Algoritma merupakan sekumpulan instruksi untuk memecahkan masalah tertentu dan diimplementasikan dengan satu atau lebih struktur data, dan efisiensi suatu algoritma bergantung pada struktur data yang dipilih dan langkah-langkah yang diambil untuk menyelesaikan masalah.
 
