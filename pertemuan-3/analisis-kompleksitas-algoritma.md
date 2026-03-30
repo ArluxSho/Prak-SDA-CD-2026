@@ -96,4 +96,4 @@ System.out.println("Total operasi untuk n=" + n + " adalah " + totalOperasi);
 
 ![alt text](image-1.png)
 
-<!-- referensi: https://blog.stackademic.com/how-to-calculate-big-o-notation-time-complexity-5504bed8d292 -->
+referensi: https://blog.stackademic.com/how-to-calculate-big-o-notation-time-complexity-5504bed8d292
