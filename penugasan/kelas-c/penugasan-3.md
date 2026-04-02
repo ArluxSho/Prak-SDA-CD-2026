@@ -107,7 +107,7 @@ Bandingkan *runtime* terhadap `LinkedList`, kemudian jelaskan kenapa performanya
 
 ## Nilai tambah
 
-- Kalau kalian menambahkan algoritma yang sudah ada dan menjelaskan apa yang terjadi saat algoritma berjalan beserta kompleksitasnya. 
+- Kalau kalian menambahkan algoritma selain yang sudah ada dan menjelaskan apa yang terjadi saat algoritma berjalan beserta kompleksitasnya. 
 - Bisa menampilkan space complexity
 
 ## Format Pengumpulan
