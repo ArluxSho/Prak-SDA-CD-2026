@@ -52,13 +52,13 @@ public class LinkedListTest {
         System.out.println("\nMemulai untuk n = " + n1 + "...");
 
         
-        long waktuMulai = System.nanoTime();
+        long start1 = System.nanoTime();
 
         for (int i = 0; i < n1; i++) {
             linkedList.add(0, i);
         }
 
-        long end = System.nanoTime();
+        long end1 = System.nanoTime();
         
         System.out.println("Waktu eksekusi LinkedList : " + (end1 - start1) + " ns");
 
