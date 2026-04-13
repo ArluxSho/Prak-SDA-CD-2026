@@ -8,7 +8,7 @@ Berikut adalah kode fullnya:
 import java.util.ArrayList;
 
 class Node{
-    int data;   // tipe data bebas, berfungsi untuk menyimpan data
+    int data;
     ArrayList<Node> childrenNode = new ArrayList<>();
 
     // cunstructor
@@ -22,21 +22,18 @@ class Node{
     }
 
     public void remove_with_index(int index) {
-        // memeriksa ketersediaan index yang dicari
-        // jika index out of bound
         if (index < 0 || index >= childrenNode.size()) {
             System.out.println("Child node dengan index " + index + " dari parent node '" + this.data + "' tidak ditemukan di dalam range index 0 - " + childrenNode.size());
             return;
         }
 
-        // jika index child node ditemukan
         childrenNode.remove(index);
         System.out.println("Child node dari parent node '" + this.data + "' dengan index " + index + " berhasil dihapus");
     }
 
     private void _traversal(Node node, int depth) {
-        for (int i = 0; i < depth; i++) {     // memperhatikan kedalaman tree
-            System.out.print("---");         // untuk memudahkan pembacaan tree
+        for (int i = 0; i < depth; i++) {
+            System.out.print("---");
         }
         System.out.println("> " + node.data);
 
@@ -46,36 +43,36 @@ class Node{
     }
 
     public void traversal(){
-        _traversal(this, 0);    // mengambil dari kedalaman 0
+        _traversal(this, 0);
     }
 
     private void _post_traversal(Node node, int depth) {
-        for (Node child : node.childrenNode) {  // akan rekursi dulu baru di-print
+        for (Node child : node.childrenNode) {
             _post_traversal(child, depth+1);
         }
-        for (int i = 0; i < depth; i++) {       // memperhatikan kedalaman tree
-            System.out.print("---");          // untuk memudahkan pembacaan tree
+        for (int i = 0; i < depth; i++) {
+            System.out.print("---");
         }
         System.out.println("> " + node.data);
     }
 
     public void post_traversal(){
-        _post_traversal(this, 0);    // mengambil dari kedalaman 0
+        _post_traversal(this, 0);
     }
 }
 
 public class TreeMain {
     public static void main(String[] args) {
-        Node root = new Node(35);
+        Node root = new Node(25);
         Node childNode_1 = new Node(1);
-        Node childNode_2 = new Node(3);
-        Node childNode_3 = new Node(6);
-        Node childNode_1_1 = new Node(83);
-        Node childNode_1_2 = new Node(100);
-        Node childNode_2_1 = new Node(135);
-        Node childNode_2_2 = new Node(143);
-        Node childNode_3_1 = new Node(190);
-        Node childNode_3_1_1 = new Node(2);
+        Node childNode_2 = new Node(4);
+        Node childNode_3 = new Node(7);
+        Node childNode_1_1 = new Node(66);
+        Node childNode_1_2 = new Node(67);
+        Node childNode_2_1 = new Node(100);
+        Node childNode_2_2 = new Node(120);
+        Node childNode_3_1 = new Node(135);
+        Node childNode_3_1_1 = new Node(138);
 
         root.insert(childNode_1);
         root.insert(childNode_2);
@@ -91,8 +88,8 @@ public class TreeMain {
 
         System.out.println("");
 
-        childNode_1.remove_with_index(100);
-        childNode_1.remove_with_index(1);
+        childNode_1.remove_with_index(20);
+        childNode_1.remove_with_index(0);
 
         System.out.println("");
 
@@ -100,33 +97,6 @@ public class TreeMain {
     }
 }
 
-/* Output
-
-    > 35
-    ---> 1
-    ------> 83
-    ------> 100
-    ---> 3
-    ------> 135
-    ------> 143
-    ---> 6
-    ------> 190
-    ---------> 2
-
-    Child node dengan index 100 dari parent node '1' tidak ditemukan di dalam range index 0 - 2
-    Child node dari parent node '1' dengan index 1 berhasil dihapus
-
-    > 35
-    ---> 1
-    ------> 83
-    ---> 3
-    ------> 135
-    ------> 143
-    ---> 6
-    ------> 190
-    ---------> 2
-
-*/
 ```
 
 ## 7. Contoh
