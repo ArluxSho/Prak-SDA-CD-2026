@@ -103,6 +103,7 @@ public class TreeMain {
 
 ### a. Struktur Folder
 
+```
 project/
 ├── src/
 │ └── index.html
@@ -112,8 +113,9 @@ project/
 ├── docs/
 │ └── user-stories.md
 | └── backlog.md
-│  
+│
 └── README.md
+```
 
 ### b. DOM HTML
 
@@ -125,7 +127,7 @@ project/
 
 ## 8. Latihan
 
-a. Jelaskan Root, Leaf, Edge, dan Height!
-b. Dalam algoritma Preorder Traversal, urutan langkah yang benar saat mengunjungi setiap node adalah ...
-c. Dalam algoritma Postorder Traversal, urutan langkah yang benar saat mengunjungi setiap node adalah ...
-d. Root (A) punya anak B (kiri) dan C (kanan). B punya anak D (kiri). Gambarkan dan jelaskan hasil Preorder dan Postorder traversal-nya!
+a. Jelaskan Root, Leaf, Edge, dan Height!<br>
+b. Dalam algoritma Preorder Traversal, urutan langkah yang benar saat mengunjungi setiap node adalah ...<br>
+c. Dalam algoritma Postorder Traversal, urutan langkah yang benar saat mengunjungi setiap node adalah ...<br>
+d. Root (A) punya anak B (kiri) dan C (kanan). B punya anak D (kiri). Gambarkan dan jelaskan hasil Preorder dan Postorder traversal-nya!<br>
