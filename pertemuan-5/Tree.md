@@ -24,19 +24,19 @@ Disebut non-linear karena data tidak disusun dalam satu garis lurus seperti arra
 
 Terminologi atau istilah-istilag yang digunakan untuk memahami struktur dari tree itu sendiri. Ada beberapa istilah dalam tree:
 
-- Node
-- Root Node
-- Parent Node
-- Child Node
-- Leaf Node
+- Node (semua elemen dalam tree)
+- Root Node (node teratas yang tidak memiliki parent)
+- Parent Node (node yang memiliki child)
+- Child Node (node yang memiliki parent)
+- Leaf Node (node yang tidak memiliki child)
 
 Ada juga istilah tambahan seperti:
 
-- Edge
-- Sub Tree
-- Size Tree
-- Height of Tree
-- Deepth of Tree
+- Edge (garis yang menghubungkan dua node)
+- Sub Tree (bagian dari tree yang terdiri dari satu node dan semua turunannya)
+- Size Tree (jumlah seluruh node dalam tree)
+- Height of Tree (jarak terpanjang dari root ke leaf yang dihitung dalam edge)
+- Deepth of Tree (jarak dari root ke node terdalam)
 
 ### Lalu apa yang membedakan Tree dengan struktur data lainnya?
 
