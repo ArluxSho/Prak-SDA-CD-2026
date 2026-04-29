@@ -38,3 +38,5 @@ Kumpulkan pengerjaan dalam bentuk 1 file zip yang berisi
 2. file laporan (.pdf)
 
 Format nama file: D_PSDA_Responsi1_NIM_NAMA.zip
+
+Deadline: (menyesuaikan)
