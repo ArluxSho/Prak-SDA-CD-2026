@@ -37,4 +37,4 @@ Kumpulkan pengerjaan dalam bentuk 1 file zip yang berisi
 1. file src (.java)
 2. file laporan (.pdf)
 
-Format nama file: D_PASDA_Responsi_NIM_NAMA.zip
+Format nama file: D_PSDA_Responsi1_NIM_NAMA.zip
