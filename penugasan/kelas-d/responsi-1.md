@@ -39,4 +39,4 @@ Kumpulkan pengerjaan dalam bentuk 1 file zip yang berisi
 
 Format nama file: D_PSDA_Responsi1_NIM_NAMA.zip
 
-Deadline: (menyesuaikan)
+Deadline: 21 Mei 2026, 23.59
