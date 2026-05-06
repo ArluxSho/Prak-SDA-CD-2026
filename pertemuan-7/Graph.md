@@ -1,149 +1,258 @@
-# 1. Graph
+## Graph
 
-**Graph** adalah suatu struktur data yang mendefinisikan hubungan antara suatu data dengan data lainnya. Suatu graf terdiri dari sekumpulan **simpul (node)** dan **sisi (edge)** yang menghubungkan antara simpul-simpul tersebut. 
+### 1. Pengertian Graph Dasar
 
-## 1.1. Jenis Graph
+Graph adalah struktur data non-linear yang terdiri dari sekumpulan titik yang saling terhubung. Graph digunakan untuk merepresentasikan jaringan di dunia nyata, seperti jaringan jalan raya, pertemanan di media sosial, atau topologi jaringan komputer.<br>
 
-* **Graf berarah (Directed Graph):** Setiap edge memiliki arah.
-  ![Ilustrasi Graf Berarah](https://github.com/Alfurqon02/Praktikum-SDA-2023/blob/main/Bab7-GraphAndDisjointSet/img/directed-graph.png)
-* **Graf tak berarah (Undirected Graph):** Edge tidak memiliki arah.
-  ![Ilustrasi Graf Tidak Berarah](https://github.com/Alfurqon02/Praktikum-SDA-2023/blob/main/Bab7-GraphAndDisjointSet/img/undirected-graph.png)
+Graph terdiri dari dua komponen utama:
 
-## 1.2 Implementasi
+- Vertex (Node/Simpul) : Entitas atau data itu sendiri (biasanya dilambangkan dengan huruf atau angka)
+- Edge (Sisi/Garis) : Jalur yang menghubungkan dua buah Vertex.
 
-### 1.2.1 Adjacency Matrix (Matriks Ketetanggaan)
+Berdasarkan Arahnya (Direction), Graph dibagi menjadi dua:
 
-Pada dasarnya, matriks ketetanggaan memanfaatkan konsep yang mirip dengan array dua dimensi yang merepresentasikan simpul-simpul dalam suatu graf.
+- Undirected Graph (Graph Tak Berarah): Sisi tidak memiliki arah. Jika ada edge antara A dan B, maka A bisa ke B dan B bisa ke A (komunikasi dua arah).
+- Directed Graph (Graph Berarah / Digraph): Sisi memiliki arah. Jika ada edge dari A ke B, kita hanya bisa pergi dari A ke B, tidak berlaku sebaliknya kecuali ada edge lain dari B ke A.
 
-#### Contoh:
+### 2. Representasi Graph
+
+Agar Graph dapat diolah oleh program, kita perlu menerjemahkannya ke dalam bentuk struktur data. Ada dua cara paling umum yang digunakan:
+
+#### 2.1 Adjacency Matrix
+
+![geeksforgeeks](https://media.geeksforgeeks.org/wp-content/uploads/20200604170814/add-and-remove-edge-in-adjacency-matrix-representation-initial1.jpg)
+referensi: geeksforgeeks.org<br>
+
+Adjacency Matrix merepresentasikan graph menggunakan array 2 dimensi (matriks) berukuran $V$ $x$ $V$, dimana $V$ adalah jumlah vertex. Gampangnya:
+
+- Jika ada edge dari vertex $i$ ke vertex $j$, maka nilai matrix[i][j] = 1.
+- Jika tidak ada edge, maka nilainya 0.
+
+- Kelebihan: Sangat cepat untuk mengecek apakah dua vertex saling terhubung, yaitu $O(1)$.<br>
+- Kekurangan: Memakan banyak memori, yaitu $O(V^2)$, terutama jika graph-nya "renggang" (sparse graph / sedikit edge).<br>
+
+Terdapat 2 operasi dalam Adjacency Matrix yaitu add dan remove. Berikut implementasi Adjacency Matrix di Java:
 
 ```java
-public enum Tempat {
-    RUMAH,
-    UNIVERSITAS_SEBELAS_MARET,
-    RUMAH_SAKIT_DR_MOEWARDI,
-    SMA_NEGERI_3_SURAKARTA,
-    PECEL_MADIUN_PUCANGSAWIT
-}
+// Java program to add and remove edge
+// in the adjacency matrix of a graph
 
-public class GrafMatrix {
-    public static void main(String[] args) {
-        int jumlahTempat = Tempat.values().length;
-        double[][] jarak = new double[jumlahTempat][jumlahTempat];
+class GraphMatrix {
 
-        // Inisialisasi jarak ke dirinya sendiri = 0
-        for (int i = 0; i < jumlahTempat; i++) {
-            for (int j = 0; j < jumlahTempat; j++) {
-                jarak[i][j] = (i == j) ? 0.0 : -1.0; // -1 artinya tidak ada jalur langsung
+    // Number of vertices
+    private int n;
+
+    // Adjacency matrix
+    private int[][] g;
+
+    // Constructor
+    GraphMatrix(int x)
+    {
+        this.n = x;
+        g = new int[n][n];
+    }
+
+    // Function to display adjacency matrix
+    public void displayAdjacencyMatrix()
+    {
+        // Displaying the 2D matrix
+        for (int i = 0; i < n; ++i) {
+            System.out.println();
+            for (int j = 0; j < n; ++j) {
+                System.out.print(" " + g[i][j]);
             }
         }
-
-        // Menambahkan beberapa koneksi
-        jarak[Tempat.RUMAH.ordinal()][Tempat.UNIVERSITAS_SEBELAS_MARET.ordinal()] = 2.97;
-        jarak[Tempat.UNIVERSITAS_SEBELAS_MARET.ordinal()][Tempat.RUMAH.ordinal()] = 2.97;
-
-        jarak[Tempat.UNIVERSITAS_SEBELAS_MARET.ordinal()][Tempat.RUMAH_SAKIT_DR_MOEWARDI.ordinal()] = 2.86;
-        jarak[Tempat.RUMAH_SAKIT_DR_MOEWARDI.ordinal()][Tempat.UNIVERSITAS_SEBELAS_MARET.ordinal()] = 2.86;
-
-        jarak[Tempat.PECEL_MADIUN_PUCANGSAWIT.ordinal()][Tempat.SMA_NEGERI_3_SURAKARTA.ordinal()] = 2.28;
-        jarak[Tempat.SMA_NEGERI_3_SURAKARTA.ordinal()][Tempat.PECEL_MADIUN_PUCANGSAWIT.ordinal()] = 2.28;
+        System.out.println();
     }
-}
-```
 
-### 1.2.2 Adjacency List (Daftar Ketetanggaan)
-
-Daftar ketetanggaan adalah salah satu cara lain untuk merepresentasikan sebuah graf. Pada dasarnya, daftar ketetanggaan adalah sebuah array yang berisi semua simpul dalam graf, dan setiap elemennya berisi daftar tetangga serta sisi yang terhubung.
-
-#### Contoh:
-
-```java
-import java.util.*;
-
-class Jarak {
-    int tujuan;
-    double nilai;
-
-    public Jarak(int tujuan, double nilai) {
-        this.tujuan = tujuan;
-        this.nilai = nilai;
-    }
-}
-
-public class GrafList {
-    public static void main(String[] args) {
-        int jumlahTempat = Tempat.values().length;
-        List<List<Jarak>> graf = new ArrayList<>();
-
-        for (int i = 0; i < jumlahTempat; i++) {
-            graf.add(new ArrayList<>());
+    // Function to update adjacency
+    // matrix for edge insertion
+    public void addEdge(int x, int y)
+    {
+        // Checks if the vertices exists
+        if ((x < 0) || (x >= n)) {
+            System.out.println("Vertex " + x + " does not exist!");
+            return;
+        }
+        if ((y < 0) || (y >= n)) {
+            System.out.println("Vertex " + y + " does not exist!");
+            return;
         }
 
-        graf.get(Tempat.RUMAH.ordinal()).add(new Jarak(Tempat.UNIVERSITAS_SEBELAS_MARET.ordinal(), 2.97));
-        graf.get(Tempat.UNIVERSITAS_SEBELAS_MARET.ordinal()).add(new Jarak(Tempat.RUMAH.ordinal(), 2.97));
+        // Checks if it is a self edge
+        if (x == y) {
+            System.out.println("Same Vertex!");
+        } else {
+            // Insert edge (Directed Graph)
+            g[y][x] = 1;
 
-        graf.get(Tempat.UNIVERSITAS_SEBELAS_MARET.ordinal()).add(new Jarak(Tempat.RUMAH_SAKIT_DR_MOEWARDI.ordinal(), 2.86));
-        graf.get(Tempat.RUMAH_SAKIT_DR_MOEWARDI.ordinal()).add(new Jarak(Tempat.UNIVERSITAS_SEBELAS_MARET.ordinal(), 2.86));
+            // Delete comment below for Undirected Graph
+            // g[x][y] = 1;
+        }
+    }
 
-        graf.get(Tempat.PECEL_MADIUN_PUCANGSAWIT.ordinal()).add(new Jarak(Tempat.SMA_NEGERI_3_SURAKARTA.ordinal(), 2.28));
-        graf.get(Tempat.SMA_NEGERI_3_SURAKARTA.ordinal()).add(new Jarak(Tempat.PECEL_MADIUN_PUCANGSAWIT.ordinal(), 2.28));
+    // Function to update adjacency
+    // matrix for edge removal
+    public void removeEdge(int x, int y)
+    {
+        // Checks if the vertices exists
+        if ((x < 0) || (x >= n)) {
+            System.out.println("Vertex " + x + " does not exist!");
+            return;
+        }
+        if ((y < 0) || (y >= n)) {
+            System.out.println("Vertex " + y + " does not exist!");
+            return;
+        }
+
+        // Checks if it is a self edge
+        if (x == y) {
+            System.out.println("Same Vertex!");
+        } else {
+            // Remove edge
+            g[y][x] = 0;
+
+            // Delete comment below for Undirected Graph
+            // g[x][y] = 0;
+        }
+    }
+}
+
+// Driver Code
+public class Main {
+    public static void main(String[] args)
+    {
+        int N = 6;
+        GraphMatrix obj = new GraphMatrix(N);
+
+        // Inserting edges
+        obj.addEdge(0, 1);
+        obj.addEdge(0, 2);
+        obj.addEdge(0, 3);
+        obj.addEdge(0, 4);
+        obj.addEdge(1, 3);
+        obj.addEdge(2, 3);
+        obj.addEdge(2, 4);
+        obj.addEdge(2, 5);
+        obj.addEdge(3, 5);
+
+        System.out.println("Adjacency matrix after edge insertions:");
+        obj.displayAdjacencyMatrix();
+
+        obj.removeEdge(2, 3);
+
+        System.out.println("\nAdjacency matrix after edge removal:");
+        obj.displayAdjacencyMatrix();
     }
 }
 ```
 
-### 1.2.3 Edge List (Daftar Sisi)
+<b>perhatikan kembali jika ingin menggunakan direct dan undirected</b>
 
-Daftar sisi juga dapat digunakan untuk merepresentasikan sebuah graf. Pada dasarnya, daftar sisi adalah sebuah list yang berisi semua sisi dalam graf.
+#### 2.1 Adjacency List
 
-#### Contoh:
+![geeksforgeeks](https://www.programiz.com/sites/tutorial2program/files/adjacency-list-representation.png)
+reference: programiz.com <br>
+
+Adjacency List merepresentasikan graph sebagai Array yang berisi List (atau LinkedList). Indeks dari array mewakili vertex, dan List pada indeks tersebut berisi semua vertex tetangga yang terhubung langsung dengannya.
+
+- Kelebihan: Sangat hemat memori untuk graph yang renggang karena hanya menyimpan edge yang benar-benar ada. Kompleksitas ruangnya $O(V + E)$.
+- Kekurangan: Butuh waktu lebih lama untuk mengecek keberadaan edge spesifik dibanding matriks.
+
+Terdapat 2 operasi dalam Adjacency Matrix yaitu add dan remove. Berikut implementasi Adjacency List di Java:
 
 ```java
-import java.util.*;
+import java.util.LinkedList;
 
-class Sisi {
-    int asal;
-    int tujuan;
-    double jarak;
+class GraphList {
+    // Jumlah vertex (node)
+    private int V;
 
-    public Sisi(int asal, int tujuan, double jarak) {
-        this.asal = asal;
-        this.tujuan = tujuan;
-        this.jarak = jarak;
+    // Array dari LinkedList untuk menyimpan daftar ketetanggaan
+    private LinkedList<Integer>[] adjList;
+
+    // Constructor
+    public GraphList(int vertices) {
+        this.V = vertices;
+
+        // Inisialisasi ukuran array sebanyak jumlah vertex
+        adjList = new LinkedList[V];
+
+        // Inisialisasi LinkedList kosong untuk setiap elemen array
+        for (int i = 0; i < V; i++) {
+            adjList[i] = new LinkedList<>();
+        }
+    }
+
+    // Method untuk menambahkan Edge
+    public void addEdge(int source, int destination) {
+        // Cek validitas node
+        if (source < 0 || source >= V || destination < 0 || destination >= V) {
+            System.out.println("Vertex tidak valid!");
+            return;
+        }
+
+        // Tambahkan destination ke list milik source
+        adjList[source].add(destination);
+
+        // Gunakan dibawah jika Undirected
+        // adjList[destination].add(source);
+    }
+
+    // Method untuk menghapus Edge
+    public void removeEdge(int source, int destination) {
+        if (source < 0 || source >= V || destination < 0 || destination >= V) {
+            System.out.println("Vertex tidak valid!");
+            return;
+        }
+
+        // Menghapus destination dari list source.
+        adjList[source].remove((Integer) destination);
+
+        // Gunakan dibawah jika Undirected
+        // adjList[destination].remove((Integer) source);
+    }
+
+    // Method untuk menampilkan Graph
+    public void displayGraph() {
+        System.out.println("Representasi Adjacency List:");
+        for (int i = 0; i < V; i++) {
+            System.out.print("Vertex " + i + " terhubung ke: ");
+
+            // Loop melalui isi LinkedList pada index i
+            for (Integer node : adjList[i]) {
+                System.out.print(node + " ");
+            }
+            System.out.println();
+        }
     }
 }
 
-public class GrafEdgeList {
+// Driver Code
+public class Graph {
     public static void main(String[] args) {
-        List<Sisi> sisiList = new ArrayList<>();
+        int V = 5; // Kita buat graph dengan 5 vertex
+        GraphList graph = new GraphList(V);
 
-        sisiList.add(new Sisi(Tempat.RUMAH.ordinal(), Tempat.UNIVERSITAS_SEBELAS_MARET.ordinal(), 2.97));
-        sisiList.add(new Sisi(Tempat.UNIVERSITAS_SEBELAS_MARET.ordinal(), Tempat.RUMAH.ordinal(), 2.97));
+        // Menambahkan edge
+        graph.addEdge(0, 1);
+        graph.addEdge(0, 4);
+        graph.addEdge(1, 2);
+        graph.addEdge(1, 3);
+        graph.addEdge(1, 4);
+        graph.addEdge(2, 3);
+        graph.addEdge(3, 4);
 
-        sisiList.add(new Sisi(Tempat.UNIVERSITAS_SEBELAS_MARET.ordinal(), Tempat.RUMAH_SAKIT_DR_MOEWARDI.ordinal(), 2.86));
-        sisiList.add(new Sisi(Tempat.RUMAH_SAKIT_DR_MOEWARDI.ordinal(), Tempat.UNIVERSITAS_SEBELAS_MARET.ordinal(), 2.86));
+        // Tampilkan graph awal
+        graph.displayGraph();
 
-        sisiList.add(new Sisi(Tempat.PECEL_MADIUN_PUCANGSAWIT.ordinal(), Tempat.SMA_NEGERI_3_SURAKARTA.ordinal(), 2.28));
-        sisiList.add(new Sisi(Tempat.SMA_NEGERI_3_SURAKARTA.ordinal(), Tempat.PECEL_MADIUN_PUCANGSAWIT.ordinal(), 2.28));
+        System.out.println("\nMenghapus edge antara 1 dan 4:");
+        graph.removeEdge(1, 4);
+
+        // Tampilkan graph setelah penghapusan
+        graph.displayGraph();
     }
 }
 ```
 
-## 1.4 Perbandingan Kompleksitas
-
-| Operasi               | Matriks | Daftar | Edge List |
-| --------------------- | ------- | ------ | --------- |
-| Tambah edge           | O(1)    | O(1)   | O(1)      |
-| Hapus edge            | O(1)    | O(K)   | O(E)      |
-| Periksa hubungan edge | O(1)    | O(K)   | O(E)      |
-| Iterasi tetangga      | O(V)    | O(K)   | O(E)      |
-| Memori                | O(V²)   | O(V+E) | O(E)      |
-
-* **V** = jumlah simpul (vertex)
-* **E** = jumlah sisi (edge)
-* **K** = jumlah tetangga dari simpul tertentu
-
-## 1.5 Kesimpulan
-
-* Gunakan **Adjacency Matrix** jika jumlah simpul kecil dan sering mengecek koneksi antar node.
-* Gunakan **Adjacency List** jika graf besar dan ingin efisien dalam memori serta fleksibel dalam traversal.
-* Gunakan **Edge List** jika lebih fokus ke pemrosesan sisi seperti pengurutan bobot (misal pada algoritma Kruskal).
+<b>perhatikan kembali jika ingin menggunakan direct dan undirected</b>
