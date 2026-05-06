@@ -1,6 +1,6 @@
-## Graph
+# Graph
 
-### 1. Pengertian Graph Dasar
+## 1. Pengertian Graph Dasar
 
 Graph adalah struktur data non-linear yang terdiri dari sekumpulan titik yang saling terhubung. Graph digunakan untuk merepresentasikan jaringan di dunia nyata, seperti jaringan jalan raya, pertemanan di media sosial, atau topologi jaringan komputer.<br>
 
@@ -14,11 +14,11 @@ Berdasarkan Arahnya (Direction), Graph dibagi menjadi dua:
 - Undirected Graph (Graph Tak Berarah): Sisi tidak memiliki arah. Jika ada edge antara A dan B, maka A bisa ke B dan B bisa ke A (komunikasi dua arah).
 - Directed Graph (Graph Berarah / Digraph): Sisi memiliki arah. Jika ada edge dari A ke B, kita hanya bisa pergi dari A ke B, tidak berlaku sebaliknya kecuali ada edge lain dari B ke A.
 
-### 2. Representasi Graph
+## 2. Representasi Graph
 
 Agar Graph dapat diolah oleh program, kita perlu menerjemahkannya ke dalam bentuk struktur data. Ada dua cara paling umum yang digunakan:
 
-#### 2.1 Adjacency Matrix
+### 2.1 Adjacency Matrix
 
 ![geeksforgeeks](https://media.geeksforgeeks.org/wp-content/uploads/20200604170814/add-and-remove-edge-in-adjacency-matrix-representation-initial1.jpg)
 referensi: geeksforgeeks.org<br>
@@ -149,7 +149,7 @@ public class Main {
 
 <b>perhatikan kembali jika ingin menggunakan direct dan undirected</b>
 
-#### 2.1 Adjacency List
+### 2.2 Adjacency List
 
 ![geeksforgeeks](https://www.programiz.com/sites/tutorial2program/files/adjacency-list-representation.png)
 reference: programiz.com <br>
