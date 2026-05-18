@@ -2,14 +2,14 @@
 
 ### Pengenalan Algoritma Djikstra
 
-<img src="image.png" alt="alt text" width="200" />
+<img src="image.png" alt="alt text" width="500" />
 
 Algoritma Dijkstra adalah salah satu algoritma paling populer dalam teori graf yang digunakan untuk mencari jalur terpendek (shortest path) dari satu titik awal (source node) ke semua titik lainnya pada sebuah graf yang berbobot (weighted graph). Djikstra menggunakan komponen utama graf seperti pertemuan kemarin yaitu Node/Vertex, Edge, dan Weight.
 
 ### Cara Kerja Utama
 
-<img src="https://i.sstatic.net/O8Nkm.png" alt="alt text" width="200" />
-<img src="https://i.sstatic.net/22e9W.png" alt="alt text" width="200" />
+<img src="https://i.sstatic.net/O8Nkm.png" alt="alt text" width="500" />
+<img src="https://i.sstatic.net/22e9W.png" alt="alt text" width="500" />
 
 Algoritma Dijkstra menggunakan prinsip Greedy (Tamak). Artinya, di setiap langkahnya, algoritma ini akan selalu memilih Node terdekat yang belum dikunjungi yang memiliki bobot paling kecil saat itu.<br><br>
 
