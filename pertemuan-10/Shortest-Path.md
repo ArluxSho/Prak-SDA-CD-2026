@@ -206,3 +206,7 @@ Namun, Dijkstra memiliki kekurangan:
 
 1. Tidak mendukung bobot negatif karena hasilnya bisa salah.
 2. Untuk graph tertentu, algoritma lain seperti ```Bellman-Ford, Floyd-Warshall, dan A*``` lebih optimal untuk digunakan
+
+## H. Referensi
+Algoritma Dijkstra
+https://www.geeksforgeeks.org/dsa/dijkstras-shortest-path-algorithm-greedy-algo-7/
