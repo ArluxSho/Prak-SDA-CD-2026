@@ -53,11 +53,13 @@ Jelaskan keuntungan dan kerugian (trade-off) dari algoritma yang Anda pilih terk
 
 ---
 
-## Ketentuan Penulisan
+## Ketentuan Penulisan dan Pengerjann
 
 - Dikerjakan secara individu.
 - Wajib menyertakan referensi dari buku, jurnal, atau sumber terpercaya.
 - Dilarang menggunakan jawaban yang sepenuhnya dihasilkan AI tanpa analisis pribadi.
+- Kode harus mampu menjawab semua pertanyaan
+- Data yang ada di kode tidak harus 19 juta cukup lebih dari 19 data dengan kriteria yg sama
 
 ## Format Penamaan File
 
@@ -65,8 +67,7 @@ Jelaskan keuntungan dan kerugian (trade-off) dari algoritma yang Anda pilih terk
 D_PSDA12_NIM_NamaLengkap.pdf
 D_PSDA12_NIM_NamaLengkap.java
 * Tidak usah di zip (semua kode dijadikan 1 dengan menambahkan komentar di dalamnya)
-* File pengerjaan menggunakan template yang kemarin, tetapi dengan tambahan terdapat jawaban dari pertanyaan di atas. Jawaban terdapat di bawah 'analisis program saat dijalankan' disertai buktinya di program
-* data yang ada di kode tidak harus 19 juta cukup lebih dari 19 data dengan kriteria yg sama
+* File pengerjaan menggunakan template yang kemarin, tetapi dengan tambahan terdapat jawaban dari pertanyaan di atas. Jawaban pertanyaan terdapat di bawah 'analisis program saat dijalankan'. Jangan lupa disertai buktinya di program saat menjawab pertanyaan
 ```
 
 ---
@@ -76,16 +77,17 @@ D_PSDA12_NIM_NamaLengkap.java
 | Aspek                              | Bobot |
 | ---------------------------------- | ----- |
 | Ketepatan pemilihan algoritma      | 10%   |
-| Analisis kompleksitas              | 25%   |
-| Perbandingan dengan algoritma lain | 30%   |
-| Argumentasi trade off              | 25%   |
+| Analisis kompleksitas              | 15%   |
+| Perbandingan dengan algoritma lain | 20%   |
+| Argumentasi trade off              | 15%   |
 | Referensi                          | 10%   |
+| Kelengkapan kode dalam menjawab    | 30%   |
 
 ---
 
 ## Deadline
 
-**Tanggal Pengumpulan:** 11 Juni 2026, pukul 20.00 WIB
+**Tanggal Pengumpulan:** 12 Juni 2026, pukul 01.00 WIB
 
 Pengumpulan dilakukan melalui Google Classroom
 
