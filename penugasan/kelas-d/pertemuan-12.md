@@ -66,9 +66,9 @@ Jelaskan keuntungan dan kerugian (trade-off) dari algoritma yang Anda pilih terk
 ```text
 D_PSDA12_NIM_NamaLengkap.pdf
 D_PSDA12_NIM_NamaLengkap.java
+```
 * Tidak usah di zip (semua kode dijadikan 1 dengan menambahkan komentar di dalamnya)
 * File pengerjaan menggunakan template yang kemarin, tetapi dengan tambahan terdapat jawaban dari pertanyaan di atas. Jawaban pertanyaan terdapat di bawah 'analisis program saat dijalankan'. Jangan lupa disertai buktinya di program saat menjawab pertanyaan
-```
 
 ---
 
