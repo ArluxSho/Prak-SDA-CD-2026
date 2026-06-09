@@ -46,7 +46,7 @@ Diberikan dua array dengan isi sama tapi order berbeda:
 
 Jawab pertanyaan berikut:
 
-1. **Hitung jumlah operasi (perbandingan + swap) untuk Quick Sort dan Merge Sort di array A.**
+1. **Hitung jumlah operasi (perbandingan + swap) untuk Quick Sort dengan pivot di elemen terakhir dan Merge Sort di array A.**
 2. **Hitung jumlah operasi untuk Quick Sort dengan pivot di elemen terakhir di array B.**
 3. **Hitung jumlah operasi untuk Merge Sort (perbandingan + swap) di array B.**
 4. **Algoritma mana yang lebih efisien untuk setiap kasus? Sertakan alasannya!**
