@@ -9,7 +9,7 @@ Pilih dan implementasikan **satu materi dari setiap kategori berikut**:
 - Graph
 - Disjoint Set
 
-**Kategori 2 (15 poin)**
+**Kategori 2 (20 poin)**
 
 - Quick Sort
 - Merge Sort
