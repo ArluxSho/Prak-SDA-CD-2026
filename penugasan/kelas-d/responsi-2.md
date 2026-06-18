@@ -54,14 +54,14 @@ Jika mahasiswa memilih **Disjoint Set**, **Quick Sort**, dan **Shortest Path**, 
 
 ### Format Nama File
 
-`NIM_Nama_Responsi1.pdf`
+`NIM_Nama_Responsi2.pdf`
 
-`NIM_Nama_Responsi1.java` 
+`NIM_Nama_Responsi2.java` 
 
-`NIM_Nama_Responsi1.zip` (jika program lebih dari satu file)
+`NIM_Nama_Responsi2.zip` (jika program lebih dari satu file)
 
 Contoh:
 
-`L0124085_FatisdaGeng_Responsi1.pdf` dan
+`L0124085_FatisdaGeng_Responsi2.pdf` dan
 
-`L0124085_FatisdaGeng_Responsi1.zip`
+`L0124085_FatisdaGeng_Responsi2.zip`
