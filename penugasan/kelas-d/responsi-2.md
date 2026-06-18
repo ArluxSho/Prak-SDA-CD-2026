@@ -54,14 +54,9 @@ Jika mahasiswa memilih **Disjoint Set**, **Quick Sort**, dan **Shortest Path**, 
 
 ### Format Nama File
 
-`NIM_Nama_Responsi2.pdf`
+`D_PSDA_Responsi2_NIM_NAMA.pdf`
 
-`NIM_Nama_Responsi2.java` 
+`D_PSDA_Responsi2_NIM_NAMA.java` 
 
-`NIM_Nama_Responsi2.zip` (jika program lebih dari satu file)
+`D_PSDA_Responsi1_NIM_NAMA.zip` (jika program lebih dari satu file)
 
-Contoh:
-
-`L0124085_FatisdaGeng_Responsi2.pdf` dan
-
-`L0124085_FatisdaGeng_Responsi2.zip`
